@@ -13,17 +13,23 @@ version is 4.3.11.
 
   1. Launch Zsh:
 
-     ```console
+     ```sh
      zsh
      ```
 
   2. Clone the repository:
 
-     ```console
-     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+     ```sh
+     git clone --recursive git@github.com:jat255/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
      ```
 
-  3. Create a new Zsh configuration by copying the Zsh configuration files
+  3. Add .local:
+
+     ```sh
+     touch $HOME/.zlocal
+     ```
+
+  4. Create a new Zsh configuration by copying the Zsh configuration files
      provided:
 
      ```sh
@@ -40,13 +46,13 @@ version is 4.3.11.
      complicated setups, it is recommended that you back up your original
      configs and replace them with the provided prezto runcoms.
 
-  4. Set Zsh as your default shell:
+  5. Set Zsh as your default shell:
 
-     ```console
+     ```sh
      chsh -s /bin/zsh
      ```
 
-  5. Open a new Zsh terminal window or tab.
+  6. Open a new Zsh terminal window or tab.
 
 ### Troubleshooting
 
