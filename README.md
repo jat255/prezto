@@ -17,26 +17,19 @@ version is 4.3.11.
      zsh
      ```
 
-  2. Clone the repository:
+  2. Clone the repository, create `.zlocal`, install Prezto, and change default shell:
 
      ```sh
-     git clone --recursive git@github.com:jat255/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-     ```
-
-  3. Add .local:
-
-     ```sh
+     cd $HOME
+     git clone --recursive https://github.com/jat255/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
      touch $HOME/.zlocal
-     ```
-
-  4. Create a new Zsh configuration by copying the Zsh configuration files
-     provided:
-
-     ```sh
      setopt EXTENDED_GLOB
      for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
      done
+     cd .zprezto
+     git checkout my-fork
+     chsh -s /bin/zsh     
      ```
 
      Note: If you already have any of the given configuration files, `ln` will
@@ -45,12 +38,6 @@ version is 4.3.11.
      `.zshrc` and keep the rest of your Zsh configuration intact. For more
      complicated setups, it is recommended that you back up your original
      configs and replace them with the provided prezto runcoms.
-
-  5. Set Zsh as your default shell:
-
-     ```sh
-     chsh -s /bin/zsh
-     ```
 
   6. Open a new Zsh terminal window or tab.
 
